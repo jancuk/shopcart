@@ -9,6 +9,7 @@ def index(request):
     return render(request, 'home/index.html', variables)
 
 def show(request, product_id=None):
+    print product_id
     product = Product.objects.filter(id=product_id)
     variables = {'product': product}
     return render(request, 'home/show.html', variables)
